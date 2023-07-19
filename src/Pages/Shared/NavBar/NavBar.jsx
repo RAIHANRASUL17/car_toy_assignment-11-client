@@ -62,7 +62,7 @@ const NavBar = () => {
           </>
         ) : (
           <ActiveLink to="/login">
-            <button className="btn btn-ghost lg:ml-52" title="Please Login !!!">
+            <button className="btn btn-ghost lg:ml-72" title="Please Login !!!">
               Login
             </button>
           </ActiveLink>

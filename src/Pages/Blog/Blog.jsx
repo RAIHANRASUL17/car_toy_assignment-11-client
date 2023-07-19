@@ -10,7 +10,7 @@ const Blog = () => {
   return (
     <>
     <NavBar></NavBar>
-    <div className='container mx-auto'>
+    <div className='container mx-auto pt-14'>
       <h4 className='text-xl font-semibold my-1'>Question-1: What is an access token and refresh token?</h4>
       <p>Answer: A refresh token just helps you re-validate a user without them having to re-enter their login credentials multiple times. The access token is re-issued, provided the refresh token is a valid one requesting permission to access confidential resources.</p>
       <h4 className='text-xl font-semibold my-1'>Question-2: How do they work and where should we store them on the client-side?</h4>

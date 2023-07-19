@@ -12,7 +12,7 @@ const AllToy = () => {
   const [allToys, setAllToys] = useState([]) || {};
   const { loading } = useContext(AuthContext);
   useEffect(() => {
-    fetch("https://assignment-server-raihanrasul17.vercel.app/getPostToys")
+    fetch("https://car-toy-assignment-11-server.vercel.app/getPostToys")
       .then((res) => res.json())
       .then((data) => {
         // console.log(data)

@@ -31,7 +31,7 @@ const Banner = () => {
     <div>
       <Carousel>
         <div>
-          <img src={img1} />
+          <img src={img1}/>
           <div className="absolute flex items-end h-[750px] left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
             <div className="text-white space-y-7  px-12">
               <h2 className="text-5xl font-bold">

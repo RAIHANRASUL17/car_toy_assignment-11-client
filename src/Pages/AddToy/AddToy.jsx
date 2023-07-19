@@ -4,11 +4,17 @@ import NavBar from "../Shared/NavBar/NavBar";
 import Footer from "../Shared/Footer/Footer";
 import Swal from "sweetalert2";
 import useTitleSet from "../../hooks/useTitleSet";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const AddToy = () => {
   // routing coming from hook js
   useTitleSet("AddToy");
+
+  const { user, loading } = useContext(AuthContext);
   
+
+
   const handleAddToy = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -36,7 +42,7 @@ const AddToy = () => {
       description,
     };
     console.log(objectMaking);
-    fetch("https://assignment-server-raihanrasul17.vercel.app/postToys", {
+    fetch("https://car-toy-assignment-11-server.vercel.app/postToys", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -110,6 +116,7 @@ const AddToy = () => {
                   name="email"
                   type="email"
                   placeholder="Your Email"
+                  defaultValue={user?.email}
                   className="input input-bordered"
                   required
                 />

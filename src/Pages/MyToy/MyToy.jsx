@@ -6,20 +6,22 @@ import MyToyRow from "./MyToyRow";
 import Swal from "sweetalert2";
 import useTitleSet from "../../hooks/useTitleSet";
 
+
 const MyToy = () => {
   // routing coming from hook js
   useTitleSet("myToy");
 
   const { user, loading } = useContext(AuthContext);
   const [toyAll, setToyAll] = useState([]);
+  console.log(toyAll)
 
   useEffect(() => {
     fetch(
-      `https://assignment-server-raihanrasul17.vercel.app/toGetEmail/${user?.email}`
+      `https://car-toy-assignment-11-server.vercel.app/toGetEmail/${user?.email}`
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setToyAll(data);
       });
   }, [user]);
@@ -68,6 +70,8 @@ const MyToy = () => {
           key={toy._id}
           handleDelete={handleDelete}
           toy={toy}
+          toyAll={toyAll}
+          setToyAll={setToyAll}
         ></MyToyRow>
       ))}
       </div>

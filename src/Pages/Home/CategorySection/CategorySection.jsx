@@ -12,7 +12,7 @@ const CategorySection = () => {
   const [cars, setCars] = useState([]);
   useEffect(() => {
     fetch(
-      `https://assignment-server-raihanrasul17.vercel.app/cars/${activeTab}`
+      `https://car-toy-assignment-11-server.vercel.app/${activeTab}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -26,7 +26,7 @@ const CategorySection = () => {
 
   useEffect(() => {
     fetch(
-      `https://assignment-server-raihanrasul17.vercel.app/getPostToys/${activeTab}`
+      `https://car-toy-assignment-11-server.vercel.app/getPostToys/${activeTab}`
     )
       .then((res) => res.json())
       .then((data) => {

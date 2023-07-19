@@ -19,7 +19,7 @@ const ViewDetailAddToy = () => {
           <div className="hero-content flex-col lg:flex-row">
             <img
               src={photo}
-              className="lg:w-1/2 h-3/4 rounded-lg shadow-2xl"
+              className="lg:w-1/2 h-80 rounded-lg shadow-2xl"
             />
             <div className='w-1/2'>
               <h1 className="text-3xl font-bold">{title}</h1>

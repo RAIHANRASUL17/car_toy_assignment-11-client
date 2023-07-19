@@ -13,12 +13,13 @@ import ViewDetailAddToy from "../Pages/DisplayAddToy/ViewDetailAddToy";
 import AllToy from "../Pages/AllToy/AllToy";
 import MyToy from "../Pages/MyToy/MyToy";
 import Blog from "../Pages/Blog/Blog";
+import MyToyRowUpdate from "../Pages/MyToy/MyToyRowUpdate";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
-    errorElement: <ErrorPage></ErrorPage>,
+    // errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -42,7 +43,7 @@ const router = createBrowserRouter([
           <PrivateRoute>
             <ViewDetail></ViewDetail>
           </PrivateRoute>,
-          loader: ({params})=>fetch(`https://assignment-server-raihanrasul17.vercel.app/carsById/${params.Id}`)
+          loader: ({params})=>fetch(`https://car-toy-assignment-11-server.vercel.app/${params.Id}`)
       },
       {
         path: "addToy",
@@ -53,7 +54,7 @@ const router = createBrowserRouter([
       {
         path: "viewDetailAddToy/:Id",
         element: <ViewDetailAddToy></ViewDetailAddToy>,
-        loader: ({params})=>fetch(`https://assignment-server-raihanrasul17.vercel.app/getPostToysById/${params.Id}`)
+        loader: ({params})=>fetch(`https://car-toy-assignment-11-server.vercel.app/${params.Id}`)
       },
       {
         path: "allToy",
@@ -62,6 +63,9 @@ const router = createBrowserRouter([
       {
         path: "myToy",
         element: <PrivateRoute><MyToy></MyToy></PrivateRoute>
+      },{
+        path: "myToyRowUpdate/:Id",
+        element: <PrivateRoute><MyToyRowUpdate></MyToyRowUpdate></PrivateRoute>
       }
     ],
   },
